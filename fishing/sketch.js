@@ -203,16 +203,16 @@ function storeScene(){//screen3
   fill('#D6E8FF');
   text("Advanced Fishing Rod(fishing speed+2)",154,422);
   fill('black');
-  text("$50",406,450);
+  text("$10",406,450);
   fill("#5E7EB5");
   text("press [a]+[c]",126,375);
   if(keyIsDown(65)&&keyIsDown(67)){//a->65 c->67
-    if(money >= 50 && fishingRodSpeed<5){
+    if(money >= 10 && fishingRodSpeed<5){
       fishingRodSpeed = 5;
-      money = money - 50;
-    }else if(money >= 50&&fishingRodSpeed<7){
+      money = money - 10;
+    }else if(money >= 10&&fishingRodSpeed<7){
       fishingRodSpeed = 7;
-      money = money-50;
+      money = money-10;
     }else{
       fill('#D6E8FF');
       text("You don't have enough money", 900,250);
@@ -225,10 +225,10 @@ function storeScene(){//screen3
   fill('#D6E8FF');
   text("House",363,610);
   fill('black');
-  text("$800",370,640);
+  text("$80",370,640);
   if(keyIsDown(72) && money>=800 && housepurchse === false){
     housepurchse = true;
-    money = money - 800;
+    money = money - 80;
   }
   if(housepurchse === true){
     GoHouseSceneButton()
@@ -242,11 +242,11 @@ function storeScene(){//screen3
   text("Cat",780,610);
   text("(have a house first)",690,640);
   fill('black');
-  text("$200",775,670);
+  text("$30",775,670);
   if(keyIsDown(67)){
     if(money>=200 && housepurchse===true){
       catpurchse = true;
-      money = money - 200;
+      money = money - 30;
     }else if(housepurchse === false){
       text("you need to have a house first!",900,220);
     }
