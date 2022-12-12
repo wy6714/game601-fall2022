@@ -228,7 +228,7 @@ function storeScene(){//screen3
   text("House",363,610);
   fill('black');
   text("$80",370,640);
-  if(keyIsDown(72) && money>=800 && housepurchse === false){
+  if(keyIsDown(72) && money>=80 && housepurchse === false){
     housepurchse = true;
     money = money - 80;
   }
@@ -246,7 +246,7 @@ function storeScene(){//screen3
   fill('black');
   text("$30",775,670);
   if(keyIsDown(67)){
-    if(money>=200 && housepurchse===true){
+    if(money>=30 && housepurchse===true){
       catpurchse = true;
       money = money - 30;
     }else if(housepurchse === false){
