@@ -112,8 +112,10 @@ function playScene(){//screen1
   fill('black');
   text("Level" +level +": " + levelGoal + " fishes" ,400,100);
   text("Made by: Yifei Wang",1000,710);
+  text("left/right arrow key move boat",width/2,120);
+  text("down arrow key fish",width/2,100);
 
-  if (frameCount % 30 === 0 && fishes.length < 20) {
+  if (frameCount % 120 === 0 && fishes.length < 8) {
 		// create a missile
 		let fish = new Fish();
 		// Remember an array's push function adds the provided value to the "end of the array"
