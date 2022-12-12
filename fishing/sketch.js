@@ -152,6 +152,8 @@ function playScene(){//screen1
   //timer
   Timer();
   GoCreditSceneButton();
+  GoHouseSceneButton();
+  GoStoreSceneButton();
 }
 
 function creditScene(){
@@ -231,9 +233,10 @@ function storeScene(){//screen3
     housepurchse = true;
     money = money - 80;
   }
-  if(housepurchse === true){
-    GoHouseSceneButton()
-  }
+  // if(housepurchse === true){
+  //   GoHouseSceneButton()
+  // }
+ 
 
   //buy cat
   image(catImage,800,550);
@@ -245,37 +248,46 @@ function storeScene(){//screen3
   fill('black');
   text("$30",775,670);
   if(keyIsDown(67)){
-    if(money>=30 && housepurchse===true){
+    if(money>=30){
       catpurchse = true;
       money = money - 30;
-    }else if(housepurchse === false){
-      text("you need to have a house first!",900,220);
     }
   }
-  //UI ->go play scene button
+  //UI -> button
   GoPlaySceneButton();
   GoCreditSceneButton();
+  GoHouseSceneButton()
 }
 
 function houseScene(){
   timer = 0;
   let text1 = 'you have a home now!';
-  let text2 = 'you have a home & a cat! Enjoy!'
+  let text2 = 'you have a home & a cat! Enjoy!';
+  let text3 = 'you have a cat now!';
   background('#404738');
-  fill('white');
-  textFont(myfontN);
-  image(roomImage,width/2,height/2);
-  textSize(20);
-  GoStoreSceneButton();
-  if(catpurchse === true){
-    text(text2,100,60);
+  GoPlaySceneButton();
+  GoCreditSceneButton();
+  GoPlaySceneButton();
+  if(housepurchse === true){
+    fill('white');
+    textFont(myfontN);
+    image(roomImage,width/2,height/2);
+    textSize(20);
+    GoStoreSceneButton();
+    if(catpurchse === true){
+      text(text2,100,60);
+      image(catImage,680,680);
+      textSize(50);
+      fill('yellow')
+      text("Game End",800,80);
+    }else{
+      textSize(20);
+      text(text1,100,60);
+    }
+  }else if(catpurchse === true){
+    text(text3,100,60);
     image(catImage,680,680);
     textSize(50);
-    fill('yellow')
-    text("Game End",800,80);
-  }else{
-    textSize(20);
-    text(text1,100,60);
   }
 }
 
