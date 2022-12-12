@@ -78,6 +78,7 @@ function draw() {
   }else if(screen === 5){
     creditScene();
   }
+  
   //console.log(mouseX + ", " + mouseY);
   //console.log(fishes.length);
   //screen =2;
@@ -110,6 +111,7 @@ function playScene(){//screen1
   image(ocean,width/2,100);
   fill('black');
   text("Level" +level +": " + levelGoal + " fishes" ,400,100);
+  text("Made by: Yifei Wang",1000,710);
 
   if (frameCount % 30 === 0 && fishes.length < 20) {
 		// create a missile
