@@ -15,9 +15,9 @@ let fishingRodSpeed = 3;
 let score = 0;
 let myfontB;
 let myfontN;
-let screen =3;
+let screen =2;
 let timer = 20;
-let money=1000;
+let money=0;
 let goPlaySceneButton;
 let goStoreSceneButton;
 let goHouseSceneButton;
@@ -78,7 +78,7 @@ function draw() {
   }else if(screen === 5){
     creditScene();
   }
-  console.log(mouseX + ", " + mouseY);
+  //console.log(mouseX + ", " + mouseY);
   //console.log(fishes.length);
   //screen =2;
   //UI level goal
