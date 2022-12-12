@@ -130,8 +130,7 @@ function playScene(){//screen1
       fishes.splice(i,1);
       i = i-1;
     }else if(fishes[i].x>width){
-      fishes.splice(i,1);
-      i = i-1;
+      fishes[i].x = 0;
     }
   }
   if(score >= levelGoal){
