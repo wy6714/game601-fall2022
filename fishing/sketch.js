@@ -57,6 +57,11 @@ function setup() {
   creditImage.resize(1000,0);
   player = new Player();
 
+  GoCreditSceneButton();
+  GoHouseSceneButton();
+  GoStoreSceneButton();
+  GoPlaySceneButton();
+
   // //create fishes on screen
   // for (let i = 0; i < 8; i++) {
   //   let fish = new Fish();
@@ -151,16 +156,13 @@ function playScene(){//screen1
   text(": " + money, 270,100);
   //timer
   Timer();
-  GoCreditSceneButton();
-  GoHouseSceneButton();
-  GoStoreSceneButton();
+  
 }
 
 function creditScene(){
   background("#8FB8EA")
   timer = 0;
   image(creditImage,700,400);
-  GoStoreSceneButton();
 }
 
 function storeScene(){//screen3
@@ -253,10 +255,7 @@ function storeScene(){//screen3
       money = money - 30;
     }
   }
-  //UI -> button
-  GoPlaySceneButton();
-  GoCreditSceneButton();
-  GoHouseSceneButton()
+ 
 }
 
 function houseScene(){
@@ -265,9 +264,7 @@ function houseScene(){
   let text2 = 'you have a home & a cat! Enjoy!';
   let text3 = 'you have a cat now!';
   background('#404738');
-  GoPlaySceneButton();
-  GoCreditSceneButton();
-  GoPlaySceneButton();
+  
   if(housepurchse === true){
     fill('white');
     textFont(myfontN);
