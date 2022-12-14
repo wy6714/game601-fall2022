@@ -16,7 +16,7 @@ let score = 0;
 let myfontB;
 let myfontN;
 let screen =2;
-let timer = 20;
+let timer = 60;
 let money=0;
 let goPlaySceneButton;
 let goStoreSceneButton;
@@ -29,6 +29,7 @@ let passlevel = 0;
 let housepurchse = false;
 let catpurchse = false;
 let song;
+let playscenebuttonOn;
 
 
 function preload(){
@@ -61,6 +62,7 @@ function setup() {
   GoHouseSceneButton();
   GoStoreSceneButton();
   GoPlaySceneButton();
+  
 
   // //create fishes on screen
   // for (let i = 0; i < 8; i++) {
@@ -92,6 +94,7 @@ function draw() {
 }
 
 function startScene(){//screen2
+  playscenebuttonOn = false;
   background('#8FB8EA');
   image(ocean,width/2,height/2+150);
   textFont(myfontB);
@@ -111,6 +114,7 @@ function startScene(){//screen2
 }
 
 function playScene(){//screen1
+  playscenebuttonOn = false;
   textFont(myfontN)
   background('#5e7eb4');
   image(ocean,width/2,100);
@@ -160,12 +164,14 @@ function playScene(){//screen1
 }
 
 function creditScene(){
+  playscenebuttonOn = true;
   background("#8FB8EA")
   timer = 0;
   image(creditImage,700,400);
 }
 
 function storeScene(){//screen3
+  playscenebuttonOn = true;
   background("#8FB8EA")
   timer = 0;
   fill('black');
@@ -235,10 +241,7 @@ function storeScene(){//screen3
     housepurchse = true;
     money = money - 80;
   }
-  // if(housepurchse === true){
-  //   GoHouseSceneButton()
-  // }
- 
+  
 
   //buy cat
   image(catImage,800,550);
@@ -246,7 +249,7 @@ function storeScene(){//screen3
   text("press[c]",870,570);
   fill('#D6E8FF');
   text("Cat",780,610);
-  text("(have a house first)",690,640);
+  //text("(have a house first)",690,640);
   fill('black');
   text("$30",775,670);
   if(keyIsDown(67)){
@@ -259,6 +262,7 @@ function storeScene(){//screen3
 }
 
 function houseScene(){
+  playscenebuttonOn = true;
   timer = 0;
   let text1 = 'you have a home now!';
   let text2 = 'you have a home & a cat! Enjoy!';
@@ -418,9 +422,10 @@ function GoCreditSceneButton(){
 }
 
 function goPlayScene(){
-
-  timer = 20;
-  screen =1;
+  if(playscenebuttonOn === true){
+    timer = 60;
+    screen =1;
+  }
   
 }
 
